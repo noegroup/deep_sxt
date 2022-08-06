@@ -1,6 +1,6 @@
 # Deep learning-based segmentation and reconstruction of cellular cryo-soft X-ray tomograms
 
-This repository holds the software for 2D segmentation and subsequent 3D reconstruction of cryo soft x-ray tomorams.
+This repository holds the software for 2D segmentation and subsequent 3D reconstruction of cellular cryo soft x-ray tomorams.
 The deep learning method is based on a specifically designed end-to-end convolutional architecture and has been trained on limited manual labels in a semi-supervised scheme. 
 
 When you use the software, please cite the following preprint:
@@ -54,7 +54,7 @@ If everthing goes according to plan, you should not need to do anything else and
 
 The two Jupyter Notebook files ```./notebooks/tomogram_2D_segmentation.ipynb``` and ```./notebooks/tomogram_3D_reconstruction.ipynb``` should be run in tandem to first obtain the 2D segmentation of all the slices in a cryo-sxt tomogram, and subsequently reconstruct the 3D surface representation using the 2D output. 
 
-We have already developed the suitable architecture and its corresponding hyperparameters and have fully trained the network using the semi-supervised approach described in the preprint. Architectural parameters are already included in the ```./trained_models``` folder. First run of the ```./notebooks/tomogram_2D_segmentation.ipynb``` should download a copy of network weights to the same folder.
+We have already developed the suitable architecture and its corresponding hyperparameters and have fully trained the network using the semi-supervised approach described in the preprint. Architectural parameters are already included in the ```./saved_models``` folder. First run of the ```./notebooks/tomogram_2D_segmentation.ipynb``` should download a copy of network weights to the same folder.
 
 The notebook contains the code necessary for setting up the deep neural network as well as the dataset manager that are used in the manuscript for producing the reported results.
 
@@ -64,6 +64,8 @@ Current setup of the code loads hyperparameters and network weights from the ```
 
 This notebook depends on local installations of these libraries
 
+Dependencies
+------------
  - **PyTorch** with CUDA enabled for network training/prediction on the GPU. The code is compatible with PyTorch version > 1.9 with cudatoolkit version > 11.1. See <a href="https://pytorch.org/get-started/locally">https://pytorch.org/get-started/locally</a> for instructions.
  - **Jupyter** with Python version 3.7 or newer.
  - **numpy** for arrays and numerical computations
@@ -73,5 +75,8 @@ This notebook depends on local installations of these libraries
  - **tifffile** for image IO
  - **tqdm** for progress tracking
 
+### Copyright
+
+Copyright (c) 2022, Artificial Intelligence for the Sciences Group (AI4Science), Freie Universität Berlin, Germany.
 
 
