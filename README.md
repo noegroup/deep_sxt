@@ -1,4 +1,5 @@
-# Deep learning-based segmentation and reconstruction of cellular cryo-soft X-ray tomograms
+# Deep-SXT
+### deep learning-based segmentation and reconstruction of cellular cryo-soft X-ray tomograms
 
 This repository holds the software for 2D segmentation and subsequent 3D reconstruction of cellular cryo soft x-ray tomorams.
 The deep learning method is based on a specifically designed end-to-end convolutional architecture and has been trained on limited manual labels in a semi-supervised scheme. 
@@ -27,57 +28,66 @@ Installation
 
 We recommend using a conda environment for installing all the necessary components and running the notebooks. See <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> for instructions on how to establish a local conda installation.
 
-You can start by making a dedicated conda environment. To do so, run the following command in terminal,
+You can start by creating a dedicated conda environment. To do so, run the following command in terminal,
 
 ```
 conda create -n your_environment_name python
 ```
 
-Switich to the newly-made environment,
+Switch to the newly created environment,
  
 ```
 conda activate your_environment_name
 ```
 
-You can optionally check if the ```pip``` instance is invoked from the correct environment by looking at the output of ```which pip``` which should point to the folder made for your new conda environment.
+**Hint**: it is good practice to check if the ```pip``` instance is invoked from the correct environment by looking at the output of ```which pip``` and making sure that it points to the folder made for your new conda environment.
 
-Having the conda environment up and running, you can install this software package easily. First obtain a local copy from github,
+Having the conda environment up and running, you can install this software package easily.
+
+First clone a local copy of the repository from **github**:
 
 ```
 git clone https://github.com/noegroup/deep_sxt.git
 ```
 
-Then run the following install command inside the folder containing the downloaded code,
+Then navigate to the folder containing the cloned repository and install the software package,
 
 ```
 pip install --upgrade .
 ```
 
-If everthing goes according to plan, you should not need to do anything else and you can start using the software. The most common problem would be with hardware compatibility and driver availability. Make sure you have the latest NVIDIA drivers already installed on your machine. You can check driver version via the ```nvidia-smi``` command.
+If everything goes according to plan, you should not need to do anything else, and you can start using the software.
 
-The two Jupyter Notebook files ```./notebooks/tomogram_2D_segmentation.ipynb``` and ```./notebooks/tomogram_3D_reconstruction.ipynb``` should be run in tandem to first obtain the 2D segmentation of all the slices in a cryo-sxt tomogram, and subsequently reconstruct the 3D surface representation using the 2D output. 
+The most common problem would be with GPU drivers and their compatibility with TensorFlow. Make sure you have the latest NVIDIA drivers already installed on your machine. You can check driver version via the ```nvidia-smi``` command.
 
-We have already developed the suitable architecture and its corresponding hyperparameters and have fully trained the network using the semi-supervised approach described in the preprint. Architectural parameters are already included in the ```./saved_models``` folder. First run of the ```./notebooks/tomogram_2D_segmentation.ipynb``` should download a copy of network weights to the same folder.
 
-The notebook contains the code necessary for setting up the deep neural network as well as the dataset manager that are used in the manuscript for producing the reported results.
+Application
+---
 
-In the current setup of the code, which does not repeat the training but uses the weights from an already trained version, the whole notebook should run within a minute time, and produce plots of prediction accuracies, false positive/negatives (similar to Figure 2c of the manuscript) as well as false-color output of micrographs with nanobarcodes highlighted (similar to Extended Data Figure 6 of the manuscript).
+The two Jupyter Notebook files
 
-Current setup of the code loads hyperparameters and network weights from the ```./data directory```. The flags in the code can easily be changed to retrain and save the network.
+ - ```./notebooks/tomogram_2D_segmentation.ipynb```
+ - ```./notebooks/tomogram_3D_reconstruction.ipynb```
 
-This notebook depends on local installations of these libraries
+contain the scripts necessary for processing tomograms with Deep-SXT.
+
+These notebooks should be run in the given oder to first obtain the 2D segmentation of all the slices in a cryo-sxt tomogram, and then reconstruct the 3D surface representation using the 2D output. 
+
+Using this software does not require training the deep network.
+We have already obtained optimal network hyperparameters and have also fully trained the network using the semi-supervised approach described in the preprint.
+Network parameters are already included in the repository in the ```./saved_models``` folder.
+When you run the ```./notebooks/tomogram_2D_segmentation.ipynb``` notebook for the first time, a copy of network weights are automatically downloaded to the same folder.
+
 
 Dependencies
-------------
+---
 
- - **PyTorch** with CUDA enabled for network training/prediction on the GPU. The code is compatible with PyTorch version > 1.9 with cudatoolkit version > 11.1. See <a href="https://pytorch.org/get-started/locally">https://pytorch.org/get-started/locally</a> for instructions.
- - **Jupyter** with Python version 3.7 or newer.
- - **numpy** for arrays and numerical computations
- - **scipy** for signal processing functions
- - **matplotlib** for plotting
- - **scikit-image** for image processing
- - **tifffile** for image IO
- - **tqdm** for progress tracking
+ - **TensorFlow** with CUDA enabled. 
+ - **Jupyter**
+ - **numpy**
+ - **matplotlib**
+ - **tifffile**
+ - **tqdm**
 
 ### Copyright
 
