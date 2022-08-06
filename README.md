@@ -82,7 +82,7 @@ When you run the ```./notebooks/tomogram_2D_segmentation.ipynb``` notebook for t
 Dependencies
 ---
 
- - **TensorFlow** with CUDA enabled. 
+ - **TensorFlow**
  - **Jupyter**
  - **numpy**
  - **matplotlib**
