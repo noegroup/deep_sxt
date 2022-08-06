@@ -27,7 +27,7 @@ We recommend using a conda environment for installing all the necessary componen
 You can start by making a dedicated conda environment. To do so, run the following command in terminal,
 
 ```
-conda creat -n your_environment_name python
+conda create -n your_environment_name python
 ```
 
 Switich to the newly-made environment,
