@@ -1,12 +1,14 @@
-# 3D-surface reconstruction of cellular cryo-soft X-ray microscopy tomograms using semi-supervised deep learning
+# Deep learning-based segmentation and reconstruction of cellular cryo-soft X-ray tomograms
 
-This repository holds the software for deep-learning-based segmentation and 3D reconstruction of cryo soft x-ray tomorams.
+This repository holds the software for 2D segmentation and subsequent 3D reconstruction of cryo soft x-ray tomorams.
+The deep learning method is based on a specifically designed end-to-end convolutional architecture and has been trained on limited manual labels in a semi-supervised scheme. 
 
-Please cite this preprint when you use the software,
+When you use the software, please cite the following preprint:
 
 ```
 @article {DyhrSadeghi2022deepsxt,
-	author = {Dyhr, Michael C. A. and Sadeghi, Mohsen and Moynova, Ralitsa and Knappe, Carolin and Kepsutlu, Burcu and Werner, Stephan and Schneider, Gerd and McNally, James and Noe, Frank and Ewers, Helge},
+	author = {Dyhr, Michael C. A. and Sadeghi, Mohsen and Moynova, Ralitsa and Knappe, Carolin and Kepsutlu, Burcu and
+	 Werner, Stephan and Schneider, Gerd and McNally, James and Noe, Frank and Ewers, Helge},
 	title = {3D-surface reconstruction of cellular cryo-soft X-ray microscopy tomograms using semi-supervised deep learning},
 	elocation-id = {2022.05.16.492055},
 	year = {2022},
@@ -18,11 +20,41 @@ Please cite this preprint when you use the software,
 }
 ```
 
-We recommend making a conda environment for installing all the necessary components and running the notebook. See <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> for instructions.
+The software is implemented in Python using a TensorFlow backend. To benefit from the GPU-accelerated deep learning provided by TensorFlow, you should run the software on a desktop PC equipped with a graphics card with an NVIDIA GPU.
 
-The two Jupyter Notebook files ```./tomogram_2D_segmentation.ipynb``` and ```./tomogram_3D_reconstruction.ipynb``` should be run in tandem to first obtain the 2D segmentation of all the slices in a tomogram, and subsequently reconstruct the 3D surface representation based on the 2D output. 
+We recommend using a conda environment for installing all the necessary components and running the notebooks. See <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> for instructions on how to establish a local conda installation.
 
-We have already developed a suitable architecture and have fully trained the network using the semi-supervised approach described in the preprint. Architectural parameters as well as network weights are saved in the ```./trained_models``` folder. 
+You can start by making a dedicated conda environment. To do so, run the following command in terminal,
+
+```
+conda creat -n your_environment_name python
+```
+
+Switich to the newly-made environment,
+ 
+```
+conda activate your_environment_name
+```
+
+You can optionally check if the ```pip``` instance is invoked from the correct environment by looking at the output of ```which pip``` which should point to the folder made for your new conda environment.
+
+Having the conda environment up and running, you can install this software package easily. First obtain a local copy from github,
+
+```
+git clone https://github.com/noegroup/deep_sxt.git
+```
+
+Then run the following install command inside the folder containing the downloaded code,
+
+```
+pip install --upgrade .
+```
+
+If everthing goes according to plan, you should not need to do anything else and you can start using the software. The most common problem would be with hardware compatibility and driver availability. Make sure you have the latest NVIDIA drivers already installed on your machine. You can check driver version via the ```nvidia-smi``` command.
+
+The two Jupyter Notebook files ```./notebooks/tomogram_2D_segmentation.ipynb``` and ```./notebooks/tomogram_3D_reconstruction.ipynb``` should be run in tandem to first obtain the 2D segmentation of all the slices in a cryo-sxt tomogram, and subsequently reconstruct the 3D surface representation using the 2D output. 
+
+We have already developed the suitable architecture and its corresponding hyperparameters and have fully trained the network using the semi-supervised approach described in the preprint. Architectural parameters are already included in the ```./trained_models``` folder. First run of the ```./notebooks/tomogram_2D_segmentation.ipynb``` should download a copy of network weights to the same folder.
 
 The notebook contains the code necessary for setting up the deep neural network as well as the dataset manager that are used in the manuscript for producing the reported results.
 
@@ -40,13 +72,6 @@ This notebook depends on local installations of these libraries
  - **scikit-image** for image processing
  - **tifffile** for image IO
  - **tqdm** for progress tracking
-
-This notebook additionally relies on the included custom library ```./dnn_classifier``` for network and data handler components.
-
-Running this code requires a desktop PC with a graphics card containing an NVIDIA GPU.
-
-The local installation of all the required components should take < 10 min, if no problems with hardware compatibility and driver availability arise.
-
 
 
 
