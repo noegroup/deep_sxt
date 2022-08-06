@@ -22,6 +22,9 @@ When you use the software, please cite the following preprint:
 
 The software is implemented in Python using a TensorFlow backend. To benefit from the GPU-accelerated deep learning provided by TensorFlow, you should run the software on a desktop PC equipped with a graphics card with an NVIDIA GPU.
 
+Installation
+---
+
 We recommend using a conda environment for installing all the necessary components and running the notebooks. See <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> for instructions on how to establish a local conda installation.
 
 You can start by making a dedicated conda environment. To do so, run the following command in terminal,
@@ -66,6 +69,7 @@ This notebook depends on local installations of these libraries
 
 Dependencies
 ------------
+
  - **PyTorch** with CUDA enabled for network training/prediction on the GPU. The code is compatible with PyTorch version > 1.9 with cudatoolkit version > 11.1. See <a href="https://pytorch.org/get-started/locally">https://pytorch.org/get-started/locally</a> for instructions.
  - **Jupyter** with Python version 3.7 or newer.
  - **numpy** for arrays and numerical computations
