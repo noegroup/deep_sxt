@@ -20,6 +20,21 @@ classifiers = [
 
 packages = ["deep_sxt"]
 
+dependencies = [
+    	"numpy",
+    	"matplotlib",
+		"tifffile",
+		"tqdm",
+		"pyvista",
+		"meshio",
+		"pymeshfix",
+		"scikit-image",
+		"jupyter",
+		"mrcfile",
+		"ipyvtklink",
+		"tensorflow>=2.4"
+]
+
 [project.urls]
 "Homepage" = "https://github.com/noegroup/deep_sxt"
 "Bug Tracker" = "https://github.com/noegroup/deep_sxt/issues"

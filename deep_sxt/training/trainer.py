@@ -26,7 +26,7 @@
 
 
 import tensorflow as tf
-from utilities.io import *
+from deep_sxt.utilities.io import *
 from .loss import my_accuracy_function
 from tqdm.notebook import tqdm
 

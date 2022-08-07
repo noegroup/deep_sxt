@@ -25,7 +25,6 @@
 # SOFTWARE.
 
 
-import tensorflow as tf
 import tensorflow.keras.layers as lay
 from .activation_block import MyActivationBlock
 from .bottleneck_conv import MyBottleneckLayer

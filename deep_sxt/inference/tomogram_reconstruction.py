@@ -53,7 +53,7 @@ def z_smooth (slices, smoothing_depth=2):
 
     smoothed_slices = []
 
-    print("Smoothing tomogram...")
+    print(f"Smoothing the tomogram...")
 
     for i in tqdm(range(slices.shape[0])):
 
@@ -89,7 +89,7 @@ def surface_reconstruction(segmented_slices, flip_z=True):
     if flip_z:
         seg_masks = np.flip(seg_masks, axis=2)
 
-    print("Starting reconstruction...\n")
+    print("Surface reconstruction in progress...\n")
 
     verts, faces, normals, values = marching_cubes(seg_masks, method='lewiner',
                                                    level=None, allow_degenerate=False,

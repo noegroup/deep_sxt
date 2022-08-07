@@ -30,9 +30,8 @@ import os
 import glob
 import tifffile
 import tensorflow as tf
-from utilities.io import *
+from deep_sxt.utilities.io import *
 from tqdm.notebook import tqdm
-import skimage.restoration as ski_restore
 
 
 def label_preprocessing_function(_lbl):

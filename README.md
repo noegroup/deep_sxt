@@ -71,9 +71,13 @@ The two Jupyter Notebook files
  - ```./notebooks/tomogram_2D_segmentation.ipynb```
  - ```./notebooks/tomogram_3D_reconstruction.ipynb```
 
-contain the scripts necessary for processing tomograms with Deep-SXT.
+contain the scripts necessary for processing tomograms with Deep-SXT. To access these notebooks, navigate to the ```notebooks``` folder and run,
 
-These notebooks should be run in the given oder to first obtain the 2D segmentation of all the slices in a cryo-sxt tomogram, and then reconstruct the 3D surface representation using the 2D output. 
+```
+jupyter notebook
+```
+
+These notebooks should normally be run in the given oder to first obtain the 2D segmentation of all the slices in a cryo-sxt tomogram, and then reconstruct the 3D surface representation using the 2D output. 
 
 Using this software does not require training the deep network.
 We have already obtained optimal network hyperparameters and have also fully trained the network using the semi-supervised approach described in the preprint.
@@ -84,14 +88,21 @@ When you run the ```./notebooks/tomogram_2D_segmentation.ipynb``` notebook for t
 Dependencies
 ---
 
- - **TensorFlow**
- - **Jupyter**
- - **numpy**
- - **matplotlib**
- - **tifffile**
- - **tqdm**
+ - TensorFlow
+ - Jupyter
+ - Numpy
+ - Matplotlib
+ - PyVista
+ - scikit-image
+ - tifffile
+ - mrcfile
+ - tqdm
+ - meshio
+ - pymeshfix
+ - ipyvtklink
 
 ### Copyright
+---
 
 Copyright (c) 2022, Artificial Intelligence for the Sciences Group (AI4Science), Freie Universität Berlin, Germany.
 

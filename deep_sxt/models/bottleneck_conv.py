@@ -25,9 +25,7 @@
 # SOFTWARE.
 
 
-import tensorflow as tf
 import tensorflow.keras.layers as lay
-import numpy as np
 from .global_params import params_Conv2D
 
 class MyBottleneckLayer(lay.Layer):
