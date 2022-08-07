@@ -33,7 +33,7 @@ def load_tomogram_from_file(tomogram_file_path):
     """Loads tomogram image-stack from file.
     File type is deduced from file extension.
 
-    Parameters:
+    Args:
         tomogram_file_path: string
             The path to tomogram file
 
@@ -78,20 +78,22 @@ def load_tomogram_from_file(tomogram_file_path):
 
 
 def segment_slice(model, img, chunk_size=600, stride=400, use_rot=False):
-    """Performs 2-dimensional segmentation on one slice of the tomogram using the deep model.
+    """Performs 2-dimensional segmentation on one slice of the tomogram
+     using the deep model.
 
-    Parameters:
+    Args:
         model :
             the deep model used for segmentation
         img : numpy.ndarray
             the slice image
         chunk_size : int
-            size of image chunks (in pixels) to use in each invocation of the network
+            size of image chunks (in pixels) to use in each invocation
+            of the network
         stride : int
             strides taken over the image. Should be smaller than chunk_size
         use_rot : bool
-            If True, each chunk of the image will also be fed to the network in 90-deg rotations
-            and the result averaged over.
+            If True, each chunk of the image will also be fed to the network
+            in 90-deg rotations and the result averaged over.
 
     Returns:
         output_lbl: numpy.ndarray
