@@ -1,9 +1,5 @@
 # Deep-SXT
----
 Deep learning-based segmentation and reconstruction of cellular cryo-soft X-ray tomograms
-
-Author: Mohsen Sadeghi (mohsen.sadeghi@fu-berlin)
-
 
 This repository holds the software for 2D segmentation and subsequent 3D reconstruction of cellular cryo soft x-ray tomorams.
 The deep learning method is based on a specifically designed end-to-end convolutional architecture and has been trained on limited manual labels in a semi-supervised scheme. 
@@ -105,6 +101,7 @@ Dependencies
 
 ### Copyright
 
-Copyright (c) 2022, Artificial Intelligence for the Sciences Group (AI4Science), Freie Universität Berlin, Germany.
-
+Copyright (c) 2022, Mohsen Sadeghi (mohsen.sadeghi@fu-berlin),
+Artificial Intelligence for the Sciences Group (AI4Science),
+Freie Universität Berlin, Germany.
 
