@@ -1,0 +1,112 @@
+{
+    "pooling": null,
+    "m_f": 64,
+    "add_instead_of_concat_after_neck": false,
+    "encoder": {
+        "kernel_sizes": [
+            3,
+            3,
+            3,
+            3,
+            3
+        ],
+        "n_stages": 4,
+        "n_blocks": 1,
+        "block_depth": 2,
+        "add_instead_of_concat": false,
+        "n_filters": [
+            64,
+            64,
+            128,
+            256,
+            512
+        ],
+        "activation": {
+            "type": "relu"
+        },
+        "dropout": {
+            "active": false
+        },
+        "batch_norm": {
+            "active": true
+        }
+    },
+    "neck": {
+        "kernel_sizes": [
+            1,
+            2,
+            3
+        ],
+        "depth": 4,
+        "n_filters": 1024,
+        "activation": {
+            "type": "relu"
+        },
+        "dropout": {
+            "active": false
+        },
+        "batch_norm": {
+            "active": true
+        }
+    },
+    "decoder_image": {
+        "kernel_sizes": [
+            3,
+            3,
+            3,
+            3,
+            3
+        ],
+        "n_stages": 4,
+        "n_blocks": 1,
+        "block_depth": 2,
+        "add_instead_of_concat": false,
+        "use_skip_connections": false,
+        "n_filters": [
+            512,
+            256,
+            128,
+            64,
+            64
+        ],
+        "activation": {
+            "type": "relu"
+        },
+        "dropout": {
+            "active": false
+        },
+        "batch_norm": {
+            "active": true
+        }
+    },
+    "decoder_label": {
+        "kernel_sizes": [
+            3,
+            3,
+            3,
+            3,
+            3
+        ],
+        "n_stages": 4,
+        "n_blocks": 2,
+        "block_depth": 2,
+        "add_instead_of_concat": false,
+        "use_skip_connections": true,
+        "n_filters": [
+            512,
+            256,
+            128,
+            64,
+            64
+        ],
+        "activation": {
+            "type": "relu"
+        },
+        "dropout": {
+            "active": false
+        },
+        "batch_norm": {
+            "active": true
+        }
+    }
+}

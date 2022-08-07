@@ -75,7 +75,7 @@ These notebooks should be run in the given oder to first obtain the 2D segmentat
 
 Using this software does not require training the deep network.
 We have already obtained optimal network hyperparameters and have also fully trained the network using the semi-supervised approach described in the preprint.
-Network parameters are already included in the repository in the ```./saved_models``` folder.
+Network parameters are already included in the repository in the ```./network_params``` folder.
 When you run the ```./notebooks/tomogram_2D_segmentation.ipynb``` notebook for the first time, a copy of network weights are automatically downloaded to the same folder.
 
 

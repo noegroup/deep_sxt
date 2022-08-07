@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "deep-sxt"
-version = "1.0.0"
+version = "2022.0.1"
 authors = [
   { name="Mohsen Sadeghi", email="mohsen.sadeghi@fu-berlin.de" },
 ]
