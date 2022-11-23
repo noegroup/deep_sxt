@@ -53,7 +53,10 @@ def image_preprocessing_function(img, mu=None, sigma=None):
     if sigma is None:
         sigma = np.std(img)
 
-    _img = (img - mu) / sigma
+    if sigma > 1.0e-3:
+        _img = (img - mu) / sigma
+    else:
+        _img = img - mu
 
     return _img.astype(np.float32)
 
@@ -63,7 +66,8 @@ class ImageLoader:
     def __init__(self, dataset_folders=None,
                  test_split_fraction=0.2,
                  use_labels=True,
-                 image_processing_function=None, label_processing_function=None):
+                 image_processing_function=None, label_processing_function=None,
+                 use_global_brightness_scaling=False):
 
         self.dataset_folders = []
         self.input_file_list = []
@@ -74,6 +78,7 @@ class ImageLoader:
 
         self.dataset_mean = None
         self.dataset_std = None
+        self.use_global_brightness_scaling = use_global_brightness_scaling
 
         if dataset_folders is not None:
             self.dataset_folders = dataset_folders
@@ -152,11 +157,11 @@ class ImageLoader:
         img = tifffile.imread(file_name)
         
         if img.dtype == np.uint8:
-            max_brightness_value = 255.0
+            max_brightness_value = np.float32(255.0)
         elif img.dtype == np.uint16:
-            max_brightness_value = 65535.0
+            max_brightness_value = np.float32(65535.0)
         else:
-            raise ValueError("Unknown image format!")
+            raise ValueError("Unknown image data type!")
         
         return img.astype(np.float32) / max_brightness_value
     
@@ -205,8 +210,13 @@ class ImageLoader:
         for _file_name in tqdm(file_names):
 
             img_file_name = _file_name + ".tif"
-            img = self.image_processing_function(self.__imread(img_file_name),
-                                                 self.dataset_mean, self.dataset_std)
+
+            if self.use_global_brightness_scaling:
+                img = self.image_processing_function(self.__imread(img_file_name),
+                                                     self.dataset_mean, self.dataset_std)
+            else:
+                img = self.image_processing_function(self.__imread(img_file_name))
+
             img_size = img.shape
 
             p11 = (self.max_dim - img_size[0]) // 2
