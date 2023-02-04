@@ -130,7 +130,7 @@ Dependencies
 
 ### Copyright
 
-Copyright (c) 2022, Mohsen Sadeghi (mohsen.sadeghi@fu-berlin),
+Copyright (c) 2022-2023, Mohsen Sadeghi (mohsen.sadeghi@fu-berlin),
 Artificial Intelligence for the Sciences Group (AI4Science),
 Freie Universität Berlin, Germany.
 
