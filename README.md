@@ -1,3 +1,5 @@
+![](docs/deep_sxt.png)
+
 # Deep-SXT
 Deep learning-based segmentation and reconstruction of cellular cryo-soft X-ray tomograms
 
