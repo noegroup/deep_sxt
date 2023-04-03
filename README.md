@@ -1,3 +1,5 @@
+![](docs/deep_sxt.png)
+
 # Deep-SXT
 Deep learning-based segmentation and reconstruction of cellular cryo-soft X-ray tomograms
 
@@ -104,7 +106,13 @@ Network parameters are already included in the repository in the ```./network_pa
 When you run the ```./notebooks/tomogram_2D_segmentation.ipynb``` notebook for the first time,
 a copy of network weights are also automatically downloaded to the same folder.
 
-In case you think your application can benefit from retraining the network on a new dataset, please contact the authors for further details on the training procedure.
+In case you think your application can benefit from retraining the network on a new dataset, please use the following notebook:
+
+```
+./notebooks/training_semi_supervised_segmentation.ipynb
+```
+
+some information about the training procedure is given in the notebook. For more detailes, please contact the authors.
 
 Dependencies
 ---
@@ -124,7 +132,7 @@ Dependencies
 
 ### Copyright
 
-Copyright (c) 2022, Mohsen Sadeghi (mohsen.sadeghi@fu-berlin),
+Copyright (c) 2022-2023, Mohsen Sadeghi (mohsen.sadeghi@fu-berlin),
 Artificial Intelligence for the Sciences Group (AI4Science),
 Freie Universität Berlin, Germany.
 
