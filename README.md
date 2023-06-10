@@ -12,23 +12,20 @@ The deep network designed for this application has been trained on limited manua
 The software relies on a TensorFlow backend. To benefit from the GPU-accelerated deep learning provided by TensorFlow, 
 you should run the software on a desktop PC equipped with a graphics card with an NVIDIA GPU.
 
-When you use the software, please cite the following preprint:
+When you use the software, please cite the following publication:
 
 ```
-@article {DyhrSadeghi2022deepsxt,
-	author = {Dyhr, Michael C. A. and Sadeghi, Mohsen and 
-	Moynova, Ralitsa and Knappe, Carolin and Kepsutlu, Burcu and 
-	Werner, Stephan and Schneider, Gerd and McNally, James and 
-	Noe, Frank and Ewers, Helge},
-	title = {3D-surface reconstruction of cellular cryo-soft X-ray microscopy 
-	tomograms using semi-supervised deep learning},
-	elocation-id = {2022.05.16.492055},
-	year = {2022},
-	doi = {10.1101/2022.05.16.492055},
-	publisher = {Cold Spring Harbor Laboratory},
-	URL = {https://www.biorxiv.org/content/early/2022/05/16/2022.05.16.492055},
-	journal = {bioRxiv}
+@article{
+	author = {Dyhr, Michael C. A. and Sadeghi, Mohsen and Moynova, Ralitsa and Knappe, Carolin and {Kepsutlu {\c{C}}akmak}, Burcu and Werner, Stephan and Schneider, Gerd and McNally, James and No{\'{e}}, Frank and Ewers, Helge},
+	doi = {10.1073/PNAS.2209938120},
+	journal = {Proc. Natl. Acad. Sci.},
+	number = {24},
+	title = {{3D surface reconstruction of cellular cryo-soft X-ray microscopy tomograms using semisupervised deep learning}},
+	url = {https://pnas.org/doi/10.1073/pnas.2209938120},
+	volume = {120},
+	year = {2023}
 }
+
 ```
 
 
