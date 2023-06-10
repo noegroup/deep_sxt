@@ -15,16 +15,18 @@ you should run the software on a desktop PC equipped with a graphics card with a
 When you use the software, please cite the following publication:
 
 ```
-@article{
-	author = {Dyhr, Michael C. A. and Sadeghi, Mohsen and Moynova, Ralitsa and Knappe, Carolin and {Kepsutlu {\c{C}}akmak}, Burcu and Werner, Stephan and Schneider, Gerd and McNally, James and No{\'{e}}, Frank and Ewers, Helge},
+@article {
+	author = {Dyhr, Michael C. A. and Sadeghi, Mohsen and
+	 Moynova, Ralitsa and Knappe, Carolin and {Kepsutlu {\c{C}}akmak}, Burcu and
+	  Werner, Stephan and Schneider, Gerd and McNally, James and
+	   No{\'{e}}, Frank and Ewers, Helge},
 	doi = {10.1073/PNAS.2209938120},
 	journal = {Proc. Natl. Acad. Sci.},
 	number = {24},
 	title = {{3D surface reconstruction of cellular cryo-soft X-ray microscopy tomograms using semisupervised deep learning}},
 	url = {https://pnas.org/doi/10.1073/pnas.2209938120},
 	volume = {120},
-	year = {2023}
-}
+	year = {2023}}
 
 ```
 
