@@ -28,6 +28,7 @@ dependencies = [
 		"pyvista",
 		"meshio",
 		"pymeshfix",
+		"trimesh",
 		"scikit-image",
 		"jupyter",
 		"mrcfile",
